@@ -9,9 +9,15 @@ CFLAGS=-g
 # switch changes from current remote-redmine-server to another one.
 # fetch gets target issues's description or opened descriptions
 # push uploads target descriptions to remote server.
-PROG=init
+PROG=redmine
 
 all:: $(PROG)
+
+redmine: redmine.o init.o file.o open.o redmine.h
+	$(CC) $(CFLAGS) -o redmine redmine.o init.o file.o open.o
+
+redmine.o: redmine.c redmine.h
+	$(CC) $(CFLAGS) -c redmine.c $(LIB_PATH) $(LIBS)
 
 file.o: file.c redmine.h
 	$(CC) $(CFLAGS) -c file.c $(LIB_PATH) $(LIBS)

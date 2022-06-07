@@ -17,4 +17,10 @@
 #define REDMINE_DB      ".redmine"
 #define ORIGIN_URL      "origin"
 
+#define NUMELEM(var)    (unsigned int)(sizeof(var) / sizeof(var[0]))
+
+int init_main(int argc, char* argv[]);
+int open_main(int argc, char* argv[]);
+
+
 #endif

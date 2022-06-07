@@ -65,7 +65,7 @@ static void save_remote_url(const char* url)
     close(fd);
 }
 
-int main(int argc, char* argv[])
+int init_main(int argc, char* argv[])
 {
     char *home;
 
